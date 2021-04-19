@@ -212,13 +212,13 @@ class FlappyEnv:
 
     FPS = 60
 
-    def __init__(self):
+    def __init__(self, resource_path):
 
         self.display = pygame.display.set_mode((self.WIDTH, self.HEIGHT))
 
         self.clock = pygame.time.Clock()
 
-        self.resources = LoadImages(Path.cwd() / "imgs")
+        self.resources = LoadImages(resource_path)
 
         speed = 2
 
@@ -271,7 +271,7 @@ class FlappyEnv:
 
 
 if __name__ == "__main__":
-    env = FlappyEnv()
+    env = FlappyEnv(Path.cwd() / "imgs")
 
     env.reset()
 
